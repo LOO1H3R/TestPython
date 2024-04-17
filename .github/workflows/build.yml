@@ -1,0 +1,11 @@
+on: push
+jobs:
+  build-python:
+    runs-on: ubuntu-latest
+    container: python:3.8
+    steps:
+      - run: python --version
+      - run: python -m pip install --upgrade pip
+      - uses: actions/checkout@v4
+      - run: pythn -m pip install matplotlib
+      - run: python app.py
